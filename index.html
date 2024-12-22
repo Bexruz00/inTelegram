@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inTelegram</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-[#89ABE3] py-[20px] flex items-center justify-around">
+        <div>
+            <a href="#" class="font-simibold text-white text-[33px] leding-[12px]">Products</a>
+        </div>
+        <button onclick="handleGetBtnInfo()" class="get-info-btn w-[150px] h-[50px] bg-[#EA738D] rounded-md text-[18px] text-white uppercase">Get Info</button>
+    </header>
+    <main>
+        <section class="p-5">
+            <ul class="flex justify-between flex-wrap gap-5 products-list"></ul>
+        </section>
+    </main>
+
+    <div id="wrapper" class="modal-wrapper scale-0 duration-[0.3s] fixed inset-0 bg-[#00000069] backdrop-blur flex items-center justify-center">
+        <div class="modal-inner absolute w-[500px] min-h-[300px] py-[40px] bg-white rounded-[25px]">
+            <h1 class="text-[26px] text-center uppercase text-slate-500">Leave your info</h1>
+            <form class="info-form flex gap-4 p-5 flex-col items-center" autocomplete="off">
+                <input class="outline-none p-2 border-2 w-full rounded-md " required type="text" name="username" placeholder="Enter your name">
+                <input class="outline-none p-2 border-2 w-full rounded-md " required type="email" name="email" placeholder="Enter your eamil">
+                <input class="outline-none p-2 border-2 w-full rounded-md " required type="tel" name="phone_number" placeholder="Enter your phone number">
+                <button type="submit" class="w-[120px] h-[40px] bg-[#EA738D] rounded-md text-[18px] text-white ">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>     
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
